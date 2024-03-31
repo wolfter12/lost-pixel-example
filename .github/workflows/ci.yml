@@ -28,5 +28,17 @@ jobs:
 
       - name: Run Visual Regression
         run: |
-          yarn playwright install
-          yarn run visual-regression
+          # Download Playwright(PW) Browsers for specific-version
+          # Each version of Playwright needs specific versions of Chromium Webkit and Firefox so defining version is necessary
+
+          # chromium
+          PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright yarn add playwright-chromium@1.42.1
+
+          #  webkit
+          PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright yarn add playwright-webkit@1.42.1
+
+          # firefox
+          PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright yarn add playwright-firefox@1.42.1
+
+          # ask playwright to launch browsers from specific path
+          PLAYWRIGHT_BROWSERS_PATH=/usr/lib/playwright yarn run visual-regression
