@@ -10,14 +10,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
-          cache: "npm"
+          node-version: 20.11.1
+          cache: "yarn"
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install --immutable --immutable-cache
 
       - name: Build Storybook
-        run: npm run build-storybook
+        run: yarn run build-storybook
 
       - name: Lost Pixel
-        uses: lost-pixel/lost-pixel@3.3.0
+        uses: yarn run visual-regression
