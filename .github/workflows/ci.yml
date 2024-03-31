@@ -28,5 +28,5 @@ jobs:
 
       - name: Run Visual Regression
         run: |
-          yarn playwright install --with-deps
+          yarn playwright install
           yarn run visual-regression
