@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "visual-regression": "lost-pixel update && lost-pixel local"
+    "visual-regression": "lost-pixel",
+    "visual-regression:update": "lost-pixel update"
   },
   "dependencies": {
     "react": "^18.2.0",
