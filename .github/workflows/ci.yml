@@ -27,4 +27,6 @@ jobs:
         run: yarn run build-storybook
 
       - name: Run Visual Regression
-        run: yarn run visual-regression
+        run: |
+          yarn playwright install chromium
+          yarn run visual-regression
